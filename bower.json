@@ -1,0 +1,8 @@
+{
+  "name": "react-easy-setup",
+  "version": "0.0.0",
+  "dependencies": {
+    "react": "~15.3.2",
+    "react-router": "~3.0.0"
+  }
+}

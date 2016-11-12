@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "popsicle": "npm:popsicle",
+    "react": "registry:npm/react#15.0.1+20160601175240",
+    "react-dom": "registry:npm/react-dom#15.0.1+20160826174104",
+    "react-router": "registry:npm/react-router#2.4.0+20160915183637"
+  },
+  "globalDependencies": {
+    "node": "registry:dt/node#6.0.0+20161019125345"
+  }
+}
