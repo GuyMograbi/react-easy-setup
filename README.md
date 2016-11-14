@@ -16,7 +16,8 @@
  - [X] read input
  - [ ] render on the server
  - [ ] write tests with coverage
- - [ ] use 'select' tag populated from remote data
+ - [ ] add style
+ - [X] use 'select' tag populated from remote data
        ``` 
          <select value={this.state.value} onChange={this.handleChange}>
                  <option value="A">Apple</option>

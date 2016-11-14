@@ -35,8 +35,8 @@ export class BuildsIndex extends React.Component<BuildsIndexProps,BuildsIndexSta
   }
 
   loadData() {
-    console.log(`getting data for ${this.getSlug()}`)
-    axios.get('https://api.travis-ci.org/repos/' + this.getSlug() + '/builds').then((result)=> {
+    console.log(`getting data for ${this.state.slug}`)
+    axios.get('https://api.travis-ci.org/repos/' + this.state.slug + '/builds').then((result)=> {
       this.setState({builds: result.data} as BuildsIndexState)
     })
   }
@@ -71,9 +71,9 @@ export class BuildsIndex extends React.Component<BuildsIndexProps,BuildsIndexSta
     }else{
 
       return <div>
-        <span>Builds : {this.state.builds}</span>
+        
         <div>{this.props.children}</div>
-        {this.getSlug()} Builds Table :
+        {this.state.slug} Builds Table :
         <table>
           <tbody>
             {this.state.builds.map((build) => {
@@ -92,11 +92,10 @@ export class BuildsIndex extends React.Component<BuildsIndexProps,BuildsIndexSta
   }
 
   render() {
-
     return <div>
       <input type="text" onChange={this.setUsername.bind(this)} value={this.state.username}/><br/>
       <button onClick={this.loadRepositories.bind(this)} disabled={!this.state.username}>Load Repositories</button><br/><br/>
-      <select value={this.state.slug} onChange={this.setSlug}>
+      <select value={this.state.slug} onChange={this.setSlug.bind(this)}>
         {this.state.repositories.map((repo)=> {
           return <option key={repo.id} value={repo.slug}>{repo.slug}</option>
         })}
@@ -107,9 +106,7 @@ export class BuildsIndex extends React.Component<BuildsIndexProps,BuildsIndexSta
   }
 }
 
-/**
- *
- */
+
 
 
 
