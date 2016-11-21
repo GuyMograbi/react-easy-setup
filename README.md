@@ -16,7 +16,7 @@
  - [X] read input
  - [ ] render on the server
  - [ ] write tests with coverage
- - [ ] add style
+ - [X] add style - decided to go on simple css since anything else looks like another learning curve. 
  - [X] use 'select' tag populated from remote data
        ``` 
          <select value={this.state.value} onChange={this.handleChange}>

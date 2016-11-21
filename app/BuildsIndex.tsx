@@ -65,6 +65,10 @@ export class BuildsIndex extends React.Component<BuildsIndexProps,BuildsIndexSta
     this.setState({slug: event.target.value} as BuildsIndexState)
   }
   
+  getRowClassName(build){
+    return build.id % 2 === 0 ? 'even' : 'odd';
+  }
+  
   renderBuilds(){
     { if (!this.state || !this.state.builds) {
       return <div>nothing to show</div>
@@ -74,10 +78,10 @@ export class BuildsIndex extends React.Component<BuildsIndexProps,BuildsIndexSta
         
         <div>{this.props.children}</div>
         {this.state.slug} Builds Table :
-        <table>
+        <table className="builds-table">
           <tbody>
             {this.state.builds.map((build) => {
-              return <tr key={build.id}>
+              return <tr key={build.id} className={this.getRowClassName(build)}>
 
                 <td>{build.branch}</td>
                 <td><Link to={`/builds/${build.id}`}>{build.id}</Link></td>

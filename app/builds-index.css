@@ -1,0 +1,7 @@
+.builds-table{
+  color:red;
+}
+
+.builds-table .even{
+  background: #CECECE;
+}
